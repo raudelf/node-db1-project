@@ -2,6 +2,7 @@ const express = require("express");
 
 // Imports
 const GetRouter = require('../posts/get-router.js');
+const PostRouter = require('../posts/posts-router.js');
 
 const db = require("../data/dbConfig.js");
 
@@ -9,6 +10,7 @@ const server = express();
 
 server.use(express.json());
 
-server.use('/api/posts', GetRouter);
+server.use('/api/get', GetRouter);
+server.use('/api/posts', PostRouter);
 
 module.exports = server;
